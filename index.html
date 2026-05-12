@@ -1,0 +1,473 @@
+:::writing
+
+<!DOCTYPE html>
+
+<html lang="ru">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Yu Zhong</title>
+
+<style>
+
+*{
+
+margin:0;
+
+padding:0;
+
+box-sizing:border-box;
+
+font-family:Segoe UI,Arial;
+
+}
+
+body{
+
+background:linear-gradient(160deg,#050814,#0c1630,#050812);
+
+color:white;
+
+overflow-x:hidden;
+
+}
+
+/ glowing animated background /
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+width:200%;
+
+height:200%;
+
+background:
+
+radial-gradient(circle at 20% 30%,#4f7bff22,transparent),
+
+radial-gradient(circle at 80% 70%,#00eaff22,transparent);
+
+animation:bgmove 14s linear infinite;
+
+z-index:-1;
+
+}
+
+@keyframes bgmove{
+
+0%{transform:translate(0,0)}
+
+50%{transform:translate(-10%,-10%)}
+
+100%{transform:translate(0,0)}
+
+}
+
+/ header /
+
+header{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:25px 60px;
+
+background:rgba(0,0,0,0.6);
+
+backdrop-filter:blur(8px);
+
+border-bottom:1px solid #1e3a8a;
+
+}
+
+.logo{
+
+font-size:28px;
+
+color:#6aa6ff;
+
+font-weight:bold;
+
+}
+
+nav a{
+
+text-decoration:none;
+
+color:white;
+
+margin-left:25px;
+
+transition:0.3s;
+
+}
+
+nav a:hover{
+
+color:#6aa6ff;
+
+}
+
+/ mlbb style button /
+
+.mlbb-btn{
+
+padding:12px 28px;
+
+border-radius:30px;
+
+border:1px solid #4c7cff;
+
+background:linear-gradient(90deg,#1a2e6b,#2746b6);
+
+color:white;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:0.3s;
+
+box-shadow:0 0 10px #2746b6;
+
+}
+
+.mlbb-btn:hover{
+
+transform:scale(1.1);
+
+box-shadow:0 0 20px #4c7cff;
+
+}
+
+/ hero /
+
+.hero{
+
+height:85vh;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+}
+
+.hero h1{
+
+font-size:80px;
+
+background:linear-gradient(90deg,#4da6ff,#9f7bff);
+
+-webkit-background-clip:text;
+
+color:transparent;
+
+margin-bottom:15px;
+
+}
+
+.hero p{
+
+opacity:0.8;
+
+margin-bottom:25px;
+
+}
+
+/ animated dragon /
+
+.dragon{
+
+position:absolute;
+
+font-size:120px;
+
+opacity:0.25;
+
+animation:dragonFly 10s infinite linear;
+
+}
+
+@keyframes dragonFly{
+
+0%{
+
+transform:translateX(-200px) translateY(0) rotate(0);
+
+}
+
+50%{
+
+transform:translateX(60vw) translateY(-80px) rotate(10deg);
+
+}
+
+100%{
+
+transform:translateX(110vw) translateY(0) rotate(0);
+
+}
+
+}
+
+/ section /
+
+.section{
+
+padding:90px 60px;
+
+}
+
+.title{
+
+font-size:38px;
+
+text-align:center;
+
+margin-bottom:60px;
+
+color:#6aa6ff;
+
+}
+
+/ 3D cards /
+
+.cards{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+gap:40px;
+
+}
+
+.card{
+
+perspective:1000px;
+
+}
+
+.card-inner{
+
+position:relative;
+
+width:100%;
+
+height:380px;
+
+transition:transform 0.8s;
+
+transform-style:preserve-3d;
+
+}
+
+.card:hover .card-inner{
+
+transform:rotateY(180deg);
+
+}
+
+.card-front, .card-back{
+
+position:absolute;
+
+width:100%;
+
+height:100%;
+
+border-radius:20px;
+
+overflow:hidden;
+
+backface-visibility:hidden;
+
+background:#101a33;
+
+box-shadow:0 0 25px #000;
+
+}
+
+.card-front img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+}
+
+.card-back{
+
+transform:rotateY(180deg);
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+text-align:center;
+
+padding:20px;
+
+font-size:18px;
+
+background:linear-gradient(160deg,#1b2f73,#0c1635);
+
+}
+
+/ author /
+
+.author{
+
+text-align:center;
+
+margin-top:60px;
+
+opacity:0.8;
+
+}
+
+/ footer /
+
+footer{
+
+text-align:center;
+
+padding:30px;
+
+margin-top:70px;
+
+background:#030612;
+
+border-top:1px solid #1e3a8a;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">Mobile Legends</div>
+
+<nav>
+
+<a href="#">Главная</a>
+
+<a href="#">Герой</a>
+
+<a href="#">Галерея</a>
+
+</nav>
+
+<button class="mlbb-btn">Играть</button>
+
+</header>
+
+<div class="dragon">🐉</div>
+
+<section class="hero">
+
+<h1>Yu Zhong</h1>
+
+<p>Black Dragon • Mobile Legends Bang Bang</p>
+
+<button class="mlbb-btn">Подробнее о герое</button>
+
+</section>
+
+<section class="section">
+
+<div class="title">Карточки героя</div>
+
+<div class="cards">
+
+<div class="card">
+
+<div class="card-inner">
+
+<div class="card-front">
+
+<img src="yuzhong1.jpg">
+
+</div>
+
+<div class="card-back">
+
+Yu Zhong — один из самых опасных бойцов,
+
+способный превращаться в Черного Дракона
+
+и доминировать на поле боя.
+
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="card-inner">
+
+<div class="card-front">
+
+<img src="yuzhong2.jpg">
+
+</div>
+
+<div class="card-back">
+
+В форме дракона Yu Zhong наносит огромный
+
+урон и контролирует командные сражения.
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="author">
+
+Автор: Lelush Lamperush
+
+</div>
+
+</section>
+
+<footer>
+
+Mobile Legends Fan Page
+
+</footer>
+
+</body>
+
+</html>
+
+:::
